@@ -1,0 +1,11 @@
+git add . ->(Mempersiapkan code untuk di push SEMUA).
+git add namafile ->(Mempersiapkan salah satu file ingin di KIRIM).
+git commit -m “” -> (Memberi pesan ketika ingin di KIRIM).
+git push origin master -> (PUSH ke server origin pada branch master).
+rm -rf .git -> (Hapus Koneksi GIT secara paksa).
+git remote add origin “URLGITHUB” -> (Koneksi Github sesuai akun).
+git remote rm “namalocalServer” -> (Hapus remote server local).
+git remote -> (Check jumlah server).
+git branch -> (Check jumlah branch).
+git log -> mengecek berapa banyak commit yg sudah diupload.
+git log --oneline -> berfungsi melihat setiap line commit.
