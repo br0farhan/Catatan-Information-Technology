@@ -1,0 +1,2 @@
+-   PHP merupakan salah satu bahasa pemograman yang paling banyak digunakan dalam internet, yang mana memungkinkan anda untuk melakukan 
+    banyak hal dan lebih mudah dari pada HTML.
