@@ -1,0 +1,15 @@
+body{
+	font-family: roboto;
+}
+ 
+h1{
+	width: 650px;
+}
+ 
+table{
+	border-collapse: collapse;
+}
+ 
+table th, table td{
+	padding: 10px 20px;
+}
