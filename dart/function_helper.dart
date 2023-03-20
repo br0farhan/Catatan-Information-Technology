@@ -29,3 +29,12 @@ bool isValidEmail =  RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-
  String word4 = 'Michael John Doe';
  String result4 = word4.trim().split(' ').map((l) => l[0].toUpperCase()).take(2).join();
  // Result : MJ
+
+ /*** 7. Word remove repeated whitespace ***/
+ String wordPropper({required String text, List<String>? except}) {
+final _spaceRegex = RegExp(r"\s+");
+String cleanSpace = text.trim().replaceAll(_spaceRegex, " ");
+String result = cleanSpace.split(" ").map((str) => except!=null ? except.contains(str) ? str : str[0].toUpperCase()+str.substring(1).toLowerCase() : str[0].toUpperCase()+str.substring(1).toLowerCase()).join(" ");
+  return result;
+  
+}
