@@ -1,0 +1,2 @@
+Tailwind CLI : mengekspor tailwind kedalam local komputer (ada fitur autocomplete / memanggil classs-class tailwind otomatis )
+Play CDN    : mengekspor framework tailwind ke dalam projek (tidak ada fitur autocomplete)
