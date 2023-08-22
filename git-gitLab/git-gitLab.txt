@@ -9,3 +9,4 @@ git remote -> (Check jumlah server).
 git branch -> (Check jumlah branch).
 git log -> mengecek berapa banyak commit yg sudah diupload.
 git log --oneline -> berfungsi melihat setiap line commit.
+git branch -r -> berfungsi untuk mengecek semua branch
