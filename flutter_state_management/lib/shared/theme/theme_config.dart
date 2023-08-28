@@ -11,5 +11,3 @@ var dangerColor = Colors.red[300]!;
 var successColor = Color(0xff22a45d);
 var infoColor = Colors.blue[300]!;
 var warningColor = Colors.orange[300]!;
-
-

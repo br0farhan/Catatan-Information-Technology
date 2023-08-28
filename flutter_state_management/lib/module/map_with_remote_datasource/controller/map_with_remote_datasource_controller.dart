@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../core.dart';
-import '../view/map_with_remote_datasource_view.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapWithRemoteDatasourceController
@@ -42,7 +41,7 @@ class MapWithRemoteDatasourceController
           ),
           builder: (context) => Icon(
             Icons.pin_drop,
-            color: Colors.red,
+            color: Colors.blue,
             size: 24,
           ),
         ),

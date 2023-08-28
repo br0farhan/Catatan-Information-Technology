@@ -34,12 +34,15 @@ class AnimationFromStateView extends StatefulWidget {
               ),
               Divider(),
               AnimatedRotation(
-                turns: (controller.isAnimated ? 360 : 0) / 360,
+                turns: (controller.isAnimated ? 100 : 0) / 360,
                 duration: const Duration(milliseconds: 900),
                 child: CircleAvatar(
+                  backgroundColor:
+                      controller.isAnimated ? Colors.green : Colors.black,
                   radius: 40.0,
-                  backgroundImage: NetworkImage(
-                    "https://i.ibb.co/PGv8ZzG/me.jpg",
+                  child: Container(
+                    height: controller.isAnimated ? 100 : 200,
+                    width: controller.isAnimated ? 100 : 200,
                   ),
                 ),
               ),
