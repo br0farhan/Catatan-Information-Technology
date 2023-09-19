@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fm_flutter/modul/Getx/animation/view/animation_view.dart';
 import 'package:fm_flutter/modul/Getx/cart/view/cart_view.dart';
 import 'package:fm_flutter/modul/Getx/counter/view/counter_view.dart';
 import 'package:fm_flutter/modul/Getx/enabledOrDisabled/view/enabled_disabled_view.dart';
@@ -98,6 +99,20 @@ class GetxScreen extends StatelessWidget {
                       );
                     },
                     child: const Text("Enabled Or Disabled"),
+                  ),
+                    ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const  AnimationView()),
+                      );
+                    },
+                    child: const Text("Animation"),
                   ),
                 ],
               ),

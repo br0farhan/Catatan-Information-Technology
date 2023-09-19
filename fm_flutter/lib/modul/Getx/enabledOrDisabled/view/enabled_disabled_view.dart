@@ -22,6 +22,12 @@ class EnabledOrDisabledView extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       child: Column(
                         children: [
+                          Image.network(
+                          "https://images.unsplash.com/flagged/photo-1559502867-c406bd78ff24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+                          width: 200.0,
+                          height: 200.0,
+                          fit: BoxFit.cover,
+                          ),
                           TextFormField(
                             decoration: const InputDecoration(
                               labelText: 'Email',
@@ -81,6 +87,7 @@ class EnabledOrDisabledView extends StatelessWidget {
                                   builder: (BuildContext context) {
                                     return AlertDialog(
                                       title: const Text("Berhasil Input Form"),
+                                      
                                       actions: [
                                         TextButton(
                                           child: const Text("Close"),
