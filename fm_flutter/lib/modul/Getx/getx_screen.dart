@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fm_flutter/modul/Getx/Loading%20Button%20Indicator/view/loading_button_view.dart';
 import 'package:fm_flutter/modul/Getx/animation/view/animation_view.dart';
 import 'package:fm_flutter/modul/Getx/cart/view/cart_view.dart';
 import 'package:fm_flutter/modul/Getx/counter/view/counter_view.dart';
@@ -71,7 +72,7 @@ class GetxScreen extends StatelessWidget {
                 ],
               ),
               Wrap(
-                  spacing: 3,
+                spacing: 3,
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -86,7 +87,7 @@ class GetxScreen extends StatelessWidget {
                     },
                     child: const Text("Cart"),
                   ),
-                   ElevatedButton(
+                  ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueGrey,
                     ),
@@ -95,12 +96,12 @@ class GetxScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const  EnabledOrDisabledView()),
+                                const EnabledOrDisabledView()),
                       );
                     },
                     child: const Text("Enabled Or Disabled"),
                   ),
-                    ElevatedButton(
+                  ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueGrey,
                     ),
@@ -108,11 +109,28 @@ class GetxScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const  AnimationView()),
+                            builder: (context) => const AnimationView()),
                       );
                     },
                     child: const Text("Animation"),
+                  ),
+                ],
+              ),
+              Wrap(
+                spacing: 3,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoadingButtonView()),
+                      );
+                    },
+                    child: const Text("Loading Button"),
                   ),
                 ],
               ),

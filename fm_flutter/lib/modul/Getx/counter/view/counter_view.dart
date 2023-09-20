@@ -10,11 +10,8 @@ class CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CounterControllerGetx>(
-
         init: CounterControllerGetx(),
-        
         builder: (controller) {
-          
           return Scaffold(
             appBar: AppBar(
               title: const Text("Counter"),

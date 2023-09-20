@@ -21,15 +21,14 @@ class AnimationView extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    InkWell(
-                      onTap: () {
+                    ElevatedButton(
+                      onPressed: () {
                         controller.updateAnimation();
                       },
-                      child: Center(
-                        child: Text(
-                          "${controller.isAnimated}",
-                          style: const TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                      child: const Text(
+                        "Klik Animation",
+                        style: TextStyle(
+                          fontSize: 10.0,
                         ),
                       ),
                     ),
@@ -40,7 +39,7 @@ class AnimationView extends StatelessWidget {
                       ),
                       child: Container(
                         height: 100,
-                        width:controller.isAnimated ? 300 : 100,
+                        width: controller.isAnimated ? 300 : 100,
                         color: Colors.amber[900],
                       ),
                     )
