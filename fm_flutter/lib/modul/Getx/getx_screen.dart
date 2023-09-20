@@ -5,6 +5,7 @@ import 'package:fm_flutter/modul/Getx/cart/view/cart_view.dart';
 import 'package:fm_flutter/modul/Getx/counter/view/counter_view.dart';
 import 'package:fm_flutter/modul/Getx/enabledOrDisabled/view/enabled_disabled_view.dart';
 import 'package:fm_flutter/modul/Getx/multiple_selection/view/multiple_view.dart';
+import 'package:fm_flutter/modul/Getx/navigation/view/navigation_view.dart';
 import 'package:fm_flutter/modul/Getx/single_selection/view/single_selection_view.dart';
 import 'package:fm_flutter/modul/Getx/theme/view/theme_view.dart';
 
@@ -145,6 +146,19 @@ class GetxScreen extends StatelessWidget {
                       );
                     },
                     child: const Text("Theme"),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NavigationView()),
+                      );
+                    },
+                    child: const Text("Navigation"),
                   ),
                 ],
               ),
