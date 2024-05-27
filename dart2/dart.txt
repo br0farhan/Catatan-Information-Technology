@@ -1,0 +1,5 @@
+NOT -> membalikan keadaan logis operandnya, jika kondisi true makan operator NOT logical akan mengghasilkan false
+OR  -> jika salah satu dari 2 operandya true, maka menghasilkan output true,
+AND -> jika kedua operand true, maka hasilnya true
+----------------///---------------------------
+
