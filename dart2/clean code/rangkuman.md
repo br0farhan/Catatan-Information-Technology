@@ -253,3 +253,216 @@ addCustomer(Customer customer){}
 ```
 
 Tapi diberikan komentar, kita sudah tau bahwa function di atas untuk menambahkan data customer.
+
+11. **Terapkan SRP**
+
+SRP (Single Responbility Principle) adalah salah satu prinsip dalam clean code yang mengatakan bahwa setiap class
+atau method seharusnya memiliki satu dan hanya satu tanggung jawab. Berikut adalah contoh kode yang tidak menerapkan SRP:
+
+```dart
+
+class ProductController {
+    void addProduct(Map product){}
+    void deleteProduct(Map product){}
+    void updateProduct(Map product){}
+    List productgetProducts(){}
+
+    void addCustomer(Map product){}
+    void deleteCustomer(Map product){}
+    void updateCustomer(Map product){}
+    List getCustomers(){}
+}
+```
+
+Class di atas tidak menerapkan SRP. Class ProductController, seharusnya hanya mengelola data yang terkait dengan produk saja.
+tidak boleh sekaligus mengelola data customer, seharusnya kodenya seperti ini:
+
+```dart
+class ProductController {
+    void addProduct(Map product){}
+    void deleteProduct(Map product){}
+    void updateProduct(Map product){}
+    List getProducts(){}
+}
+
+class CustomerController {
+    void addCustomer(Map product){}
+    void deleteCustomer(Map product){}
+    void updateCustomer(Map product){}
+    List getCustomers(x){}
+}
+```
+
+12. **Terapkan KISS**
+
+KISS (Keep It Simple, Stupid) adalah prinsip dalam Clean Code yang mengatakan bahwa kode seharusnya sederhana dan mudah dipahami. Berikut adalah contoh kode yang tidak menerapkan KISS:
+
+```dart
+class UserService {
+  bool checkUserCredentials(String username, String password) {
+    // logic untuk validasi username dan password
+    if (username.isNotEmpty && password.isNotEmpty) {
+      if (username == "admin" && password == "password") {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+```
+
+Kode yang lebih baik:
+
+```dart
+class UserService {
+  bool checkUserCredentials(String username, String password) {
+    // logic untuk validasi username dan password
+    if (validateUsername(username) && validatePassword(password)) {
+      return true;
+    }
+    return false;
+  }
+ 
+  bool validateUsername(String username) {
+    // logic untuk validasi username
+    if (username.isNotEmpty && username == "admin") {
+      return true;
+    }
+    return false;
+  }
+ 
+  bool validatePassword(String password) {
+    // logic untuk validasi password
+    if (password.isNotEmpty && password == "password") {
+      return true;
+    }
+    return false;
+  }
+}
+```
+
+13. **Terapkan DRY***
+
+DRY dalam konteks Clean Code adalah menerapkan prinsip "Don't Repeat Yourself" dalam setiap aspek, termasuk dalam penggunaan nama variabel, fungsi, dan kelas, serta penggunaan teknik atau algoritma yang sama pada beberapa bagian kode yang berbeda.
+
+Kode yang buruk:
+
+```dart
+import 'package:intl/intl.dart';
+
+void main() {
+  double price1 = 15000.0;
+  double price2 = 25000.0;
+
+  var formatter = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp', decimalDigits: 0);
+  String formattedPrice1 = formatter.format(price1);
+  String formattedPrice2 = formatter.format(price2);
+
+  print(formattedPrice1);
+  print(formattedPrice2);
+}
+```
+
+Kode yang lebih baik:
+
+```dart
+import 'package:intl/intl.dart';
+
+void main() {
+  double price1 = 15000.0;
+  double price2 = 25000.0;
+
+  String formattedPrice1 = price1.idr;
+  String formattedPrice2 = price2.idr;
+
+  print(formattedPrice1);
+  print(formattedPrice2);
+}
+
+extension DoubleExtensions on double {
+  String get idr {
+    var formatter = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp', decimalDigits: 0);
+    return formatter.format(this);
+  }
+}
+```
+
+14. **Gunakan nama sesuai dengan Architecture yang kamu gunakan!**
+
+Penamaan class harus sesuai dengan Architecture yang kamu gunakan.
+Bahkan meskipun kamu mengcopy kode tersebut dari sumber yang sangat terpecaya. 
+
+Misalnya, kamu menggunakan Architecture **MVC**, dimana halaman pada Aplikasi seharusnya menggunakan akhiran **View** dibelakangnya.
+
+Contoh yang buruk:
+
+```dart
+class HomeScreen {
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+
+class HomePage{
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+
+class HomeBlocPage{
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+
+class HomeGetView{
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+
+class HomeProviderView{
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+```
+
+Penamaan harus mengikuti architecture yang kamu gunakan. 
+Tidak perlu menambahkan penamaan terkait state management atau menggunakan prefix yang tidak perlu seperti **HomeGetView**.
+
+Seharusnya pada contoh di atas, jika kamu menggunakan MVC maka nama class-nya adalah:
+
+```dart
+class HomeView{
+  @override
+	Widget build(BuildContext context){
+     ...
+  }
+}
+```
+
+15. **Jangan gunakan bahasa indonesia pada kodemu**
+
+Jangan pernah menggunakan bahasa Indonesia untuk memberikan nama pada variabel, function maupun class. Karena itu akan menyebabkan kode-mu memiliki dua bahasa dan akan menyebabkan kebingungan dan ketidak konsistenan ke depannya. Atau bahkan kamu akan mencampur nama method-nya dengan bahasa inggris + indonesia.
+
+Contoh yang buruk:
+
+```dart
+getPelanggan(){}
+addPelanggan(){}
+ambilPelanggan(){}
+ambilDataPelanggan(){}
+```
+
+Contoh yang lebih baik:
+
+```dart
+getCustomer(){}
+```
+
